@@ -30,6 +30,6 @@ describe('getPokemon(id)', () => {
     })
 
     // 2. Assert that calling getPokemon rejects with an error
-    await expect(getPokemon(9999)).rejects.toThrow('Failed to fetch Pokémon with ID 9999')
+    await expect(getPokemon(9999)).rejects.toThrow('Failed to fetch Pokemon #9999: 404')
   })
 })
