@@ -7,19 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "jest --watch",
+    "test": "vitest --watch",
     "lint": "oxlint",
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "@babel/core": "^8.0.6",
-    "@babel/preset-env": "^8.0.6",
-    "babel-jest": "^30.5.2",
-    "jest": "^30.5.2",
-    "jest-environment-jsdom": "^30.5.2",
     "oxlint": "^1.85.0",
     "prettier": "^3.9.9",
-    "vite": "^8.3.0"
+    "vite": "^8.3.0",
+    "vitest": "^5.0.2"
   },
   "packageManager": "pnpm@12.6.0"
 }

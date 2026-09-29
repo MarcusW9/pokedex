@@ -27,7 +27,7 @@ jobs:
           node-version: lts/*
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm jest
+      - run: pnpm vitest run
       - id: pages
         uses: actions/configure-pages@v6
       # base_path is "/<repo-name>", so asset URLs work on Pages

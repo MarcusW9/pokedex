@@ -4,15 +4,13 @@ A minimal vanilla JavaScript starter for [The Odin Project](https://www.theodinp
 
 ## Stack
 
-| Tool                                                                                  | Purpose                                  |
-| ------------------------------------------------------------------------------------- | ---------------------------------------- |
-| [pnpm](https://pnpm.io/)                                                              | Package manager                          |
-| [Vite](https://vite.dev/)                                                             | Dev server and bundler                   |
-| [Jest](https://jestjs.io/)                                                            | Test runner                              |
-| [jest-environment-jsdom](https://jestjs.io/docs/configuration#testenvironment-string) | Browser-like DOM for tests               |
-| [Babel](https://babeljs.io/)                                                          | Lets Jest understand ES module `import`s |
-| [oxlint](https://oxc.rs/docs/guide/usage/linter)                                      | Linter                                   |
-| [Prettier](https://prettier.io/)                                                      | Formatter                                |
+| Tool                                             | Purpose                |
+| ------------------------------------------------ | ---------------------- |
+| [pnpm](https://pnpm.io/)                         | Package manager        |
+| [Vite](https://vite.dev/)                        | Dev server and bundler |
+| [Vitest](https://vitest.dev/)                    | Test runner            |
+| [oxlint](https://oxc.rs/docs/guide/usage/linter) | Linter                 |
+| [Prettier](https://prettier.io/)                 | Formatter              |
 
 ## Getting started
 
@@ -33,7 +31,7 @@ pnpm dev
 | `pnpm lint`    | Lint with oxlint                     |
 | `pnpm format`  | Format all files with Prettier       |
 
-Run tests once (no watch) with `pnpm jest`.
+Run tests once (no watch) with `pnpm vitest run`.
 
 ## Project structure
 
@@ -45,8 +43,6 @@ Run tests once (no watch) with `pnpm jest`.
 │   ├── counter.js        # Example module
 │   ├── counter.test.js   # Example tests
 │   └── style.css         # Global styles and CSS reset
-├── jest.config.js        # Jest config (jsdom environment)
-├── babel.config.cjs      # Babel config, used only by Jest
 ├── pnpm-workspace.yaml   # pnpm settings (dependency build scripts)
 ├── .oxlintrc.json        # Linter config
 ├── .github/workflows/  # GitHub Pages deploy
@@ -55,9 +51,10 @@ Run tests once (no watch) with `pnpm jest`.
 
 ## Testing
 
-Tests live next to the module they test, named `*.test.js`. Jest globals (`describe`, `it`, `expect`, `beforeEach`) are available without importing.
+Tests live next to the module they test, named `*.test.js`. Import test helpers (`describe`, `it`, `expect`, `vi`) from `vitest`. Tests that touch the DOM need `jsdom` (`pnpm add -D jsdom`) plus `test: { environment: 'jsdom' }` in a `vitest.config.js`.
 
 ```js
+import { it, expect } from 'vitest'
 import { setupCounter } from './counter.js'
 
 it('increments on click', () => {
