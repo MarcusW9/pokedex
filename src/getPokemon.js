@@ -13,4 +13,3 @@ export async function getPokemon(pokeId) {
   return { id, name, artwork}
 }
 
-

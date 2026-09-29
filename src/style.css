@@ -54,3 +54,22 @@ h6 {
 #app {
   isolation: isolate;
 }
+
+/* Base styles (Mobile first - phones) */
+.pokedex-container {
+  
+}
+
+/* iPad / Tablet breakpoint */
+@media (min-width: 768px) {
+  .pokedex-container {
+    
+  }
+}
+
+/* Desktop breakpoint */
+@media (min-width: 1024px) {
+  .pokedex-container {
+    
+  }
+}

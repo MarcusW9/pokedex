@@ -1,11 +1,5 @@
-import './style.css'
-import { setupCounter } from './counter.js'
+import { getPokemon } from './getPokemon.js'
+import { renderPokemon } from './ui.js'
 
-document.querySelector('#app').innerHTML = `
-  <main>
-    <h1>JS Template</h1>
-    <button id="counter" type="button"></button>
-  </main>
-`
+renderPokemon()
 
-setupCounter(document.querySelector('#counter'))

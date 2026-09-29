@@ -1,6 +1,6 @@
 import { getPokemon } from "./getPokemon";
 
-renderPokemon = async () => {
+export const renderPokemon = async () => {
     const elementPokedexContainer = document.querySelector(".pokedex-container")
     const pokedexUpperLimit = 151
 
