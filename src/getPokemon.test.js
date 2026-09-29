@@ -10,7 +10,7 @@ describe('getPokemon(id)', () => {
 
   it('fetches and returns pokemon data for a valid ID', async () => {
     // 1. Mock a successful API response
-    const mockPokemonData = { id: 25, name: 'pikachu' }
+    const mockPokemonData = { id: 25, name: 'Pikachu', artwork: undefined }
     global.fetch = vi.fn().mockResolvedValue({
       ok: true,
       json: vi.fn().mockResolvedValue(mockPokemonData)
