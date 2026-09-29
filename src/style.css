@@ -1,3 +1,22 @@
+:root {
+  /* Brand / Pokedex Accents */
+  --primary: #ff3b30;       /* Sleek modern Pokédex red */
+  --primary-hover: #e02e24; 
+  --accent: #007aff;        /* Tech blue for buttons/links */
+  
+  /* Neutral Palette (Light Mode Default) */
+  --bg-main: #f5f5f7;       /* Soft Apple-like off-white background */
+  --bg-card: #ffffff;       /* Crisp white for cards/containers */
+  --text-main: #1d1d1f;     /* Deep slate for high-contrast reading */
+  --text-muted: #86868b;    /* Subdued gray for secondary info */
+  --border: #d2d2d7;        /* Subtle border color */
+  
+  /* Shadows & Effects */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --radius: 16px;           /* Smooth modern rounding */
+}
+
 /* Minimal modern reset */
 *,
 *::before,
@@ -23,6 +42,7 @@
 
 body {
   min-height: 100vh;
+  background-color: var(--bg-main);
 }
 
 img,
@@ -49,21 +69,48 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
-}
-
-#app {
-  isolation: isolate;
+  color: var(--text-main);
+  font-size: 1.2rem;
 }
 
 /* Base styles (Mobile first - phones) */
+.pokedex-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  padding: 2rem;
+  color: var(--text-main);
+}
 .pokedex-container {
-  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--bg-card);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.pokedex-entry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-card);
+  border: var(--border) solid 1px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  padding: 1rem;
+}
+
+.pokemon-number {
+  font-size: 0.8rem;
 }
 
 /* iPad / Tablet breakpoint */
 @media (min-width: 768px) {
   .pokedex-container {
-    
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

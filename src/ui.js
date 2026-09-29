@@ -10,16 +10,19 @@ export const renderPokemon = async () => {
 
         const elementPokemonName = document.createElement("p")
         elementPokemonName.textContent = currentPokemon.name
+        elementPokemonName.classList.add("pokemon-name")
 
         const elementPokemonNumber = document.createElement("p")
         elementPokemonNumber.textContent = currentPokemon.id
+        elementPokemonNumber.classList.add("pokemon-number")
 
         const currentPokemonSprite = currentPokemon.artwork
         const img = document.createElement("img")
         img.src = currentPokemonSprite
 
         // Add everything into an entry
-        elementPokemonEntry.append(img, elementPokemonName, elementPokemonNumber)
+        elementPokemonEntry.append(img, elementPokemonNumber, elementPokemonName)
+        elementPokemonEntry.classList.add("pokedex-entry")
 
         // Add to page
         elementPokedexContainer.append(elementPokemonEntry)
